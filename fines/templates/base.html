@@ -21,10 +21,12 @@
           <div class="col-md-3 text-end">
             {% if g.user %}
                 <button type="button" class="btn btn-outline-primary me-2">{{ g.user['username'] }}</button>
-                <button type="button" class="btn btn-primary">Logout</button>
+                <a href="{{ url_for('auth.logout') }}" role="button" class="btn btn-primary">Logout</a>
             {% else %}
-                <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                <button type="button" class="btn btn-primary">Register</button>
+                <!-- <button type="button" href="{{ url_for('auth.login') }}" class="btn btn-outline-primary me-2">Login</button>
+                <button type="button" href="{{ url_for('auth.register') }}" class="btn btn-primary">Register</button> -->
+                <a href="{{ url_for('auth.login') }}" role="button" class="btn btn-outline-primary">Login</a>
+                <a href="{{ url_for('auth.register') }}" role="button" class="btn btn-primary">Register</a>
             {% endif %}
           </div>
         </header>
